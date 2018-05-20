@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+<script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.0/aframe/build/aframe-ar.js"></script>
+
+<body style='margin : 0px; overflow: hidden;'>
+
+    <a-scene embedded arjs='debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3_HAMMING63; maxDetectionRate: 9'>
+
+        <a-assets>
+            <img id="side-4" src="http://www.icone-png.com/png/13/13081.png">
+        </a-assets>
+
+        <a-marker type='barcode' value='0'>
+            <a-box position='0 0.5 0' material='opacity: 0.5; side: double; color:red;'>
+                <a-torus-knot radius='0.26' radius-tubular='0.05'>
+                    <a-animation attribute="rotation" to="360 0 0" dur="5000" easing='linear' repeat="indefinite"></a-animation>
+                </a-torus-knot>
+            </a-box>
+        </a-marker>
+
+        <a-marker type='barcode' value='1'>
+            <a-box height="0.1" material="src:http://www.icone-png.com/png/13/13081.png"></a-box>
+        </a-marker>
+
+        <a-marker type='barcode' value='2'>
+            <a-entity height="0.1" geometry="primitive: box" material="src: url(http://www.icone-png.com/png/13/13081.png)"></a-entity>
+        </a-marker>
+
+        <a-marker type='barcode' value='3'>
+            <a-box material='color: yellow;'></a-box>
+        </a-marker>
+
+        <a-marker type='barcode' value='4'>
+            <a-image width="1" height="1" src="#side-4" rotation="45 0 0"></a-image>
+        </a-marker>
+
+        <a-marker type='barcode' value='5'>
+            <a-box material='color: yellow;' position="0 0.5 0"></a-box>
+        </a-marker>
+
+        <a-entity camera></a-entity>
+    </a-scene>
+</body>
+
+</html>
